@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بن سويدان أونلاين</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f2f5f8;color:#172b4d}
+header{background:#073b32;color:white;text-align:center;padding:28px 15px}
+header h1{margin:0;font-size:27px}
+header p{margin-bottom:0}
+main{padding:18px;max-width:500px;margin:auto}
+.card{background:white;padding:18px;border-radius:15px;margin:14px 0;box-shadow:0 3px 12px #0001}
+h2{color:#08745c}
+input,select,button{width:100%;box-sizing:border-box;padding:13px;margin-top:10px;border-radius:9px;font-size:16px}
+input,select{border:1px solid #ccd5df;background:white}
+button{background:#08745c;color:white;border:0;font-weight:bold}
+.note{font-size:13px;color:#667085;line-height:1.8}
+</style>
+</head>
+<body>
+<header>
+<h1>بن سويدان أونلاين</h1>
+<p>خدمات شحن الرصيد اليمني</p>
+</header>
+<main>
+<div class="card">
+<h2>مرحباً بك 👋</h2>
+<p>اشحن رصيدك بسهولة واختر شبكتك.</p>
+</div>
+<div class="card">
+<h2>طلب شحن رصيد</h2>
+<label>اختر الشبكة</label>
+<select id="network">
+<option>يمن موبايل</option>
+<option>YOU</option>
+<option>سبأفون</option>
+<option>واي</option>
+</select>
+<label>رقم الهاتف</label>
+<input id="phone" type="tel" placeholder="أدخل رقم الهاتف">
+<label>اختر فئة الرصيد</label>
+<select id="amount">
+<option value="">اختر الفئة</option>
+<option>100 ريال</option>
+<option>200 ريال</option>
+<option>500 ريال</option>
+<option>1000 ريال</option>
+</select>
+<button onclick="sendOrder()">إرسال طلب الشحن</button>
+<p class="note">هذا نموذج أولي. إرسال الطلب لا يشحن الرصيد تلقائياً حتى ربط التطبيق بمزود خدمة معتمد.</p>
+</div>
+</main>
+<script>
+function sendOrder(){
+let p=document.getElementById('phone').value.trim();
+let n=document.getElementById('network').value;
+let a=document.getElementById('amount').value;
+if(!p||!a){alert('أدخل رقم الهاتف واختر فئة الرصيد');return;}
+alert('تم تجهيز طلبك التجريبي لشبكة '+n+' والرقم '+p+' والفئة '+a+'. لم يتم شحن الرصيد فعلياً.');
+}
+</script>
+</body>
+</html>
