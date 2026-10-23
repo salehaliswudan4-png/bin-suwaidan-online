@@ -3,187 +3,161 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#063b32">
 <title>بن سويدان أونلاين</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#f2f6f5;color:#182b28;font-family:Arial,sans-serif}
-header{background:linear-gradient(135deg,#063b32,#087e68);color:white;padding:26px 18px 32px;border-radius:0 0 28px 28px}
-.brand{font-size:25px;font-weight:bold}
-header p{font-size:14px;color:#d6f5e9}
-.balance{background:white;color:#063b32;border-radius:15px;padding:15px;margin-top:22px;box-shadow:0 4px 15px #002a201c}
-.balance small{color:#667873}
-main{padding:16px;max-width:600px;margin:auto}
-h3{margin:22px 0 12px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-.network{background:white;border:2px solid transparent;border-radius:13px;padding:15px 4px;text-align:center;font-weight:bold;cursor:pointer}
-.network.active{border-color:#07866c;background:#e3f8ef}
-.network span{display:block;font-size:12px;font-weight:normal;margin-top:7px}
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:16px 0}
-.tab{border:0;border-radius:10px;padding:12px 4px;background:#dfe9e5;color:#24463d;font-weight:bold}
-.tab.active{background:#087e68;color:white}
-.panel{background:white;border-radius:17px;padding:17px;box-shadow:0 3px 14px #003a3010}
-label{display:block;font-size:14px;margin:14px 0 7px}
-input,select{width:100%;padding:13px;border:1px solid #d6e1dd;border-radius:10px;font-size:16px;background:white}
-.packages{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
-.package{border:1px solid #dce8e3;border-radius:12px;padding:14px 8px;text-align:center;cursor:pointer}
-.package.active{border:2px solid #07866c;background:#e8f8f1}
-.package b{display:block;margin-bottom:7px}
-.package small{color:#63766e}
-button.submit{width:100%;border:0;border-radius:12px;background:#087e68;color:white;font-size:17px;font-weight:bold;padding:15px;margin-top:18px}
-.note{font-size:12px;color:#687b74;line-height:1.8}
-footer{text-align:center;padding:25px;color:#75857f;font-size:12px}
+body{margin:0;background:#f2f7f4;color:#123b30;font-family:Arial,sans-serif}
+header{background:linear-gradient(135deg,#032d25,#08664e,#032d25);color:#f6d77b;padding:25px 16px;text-align:center;border-bottom:5px solid #d9b65b}
+header h1{margin:0;font-size:27px}
+header p{color:white;margin:9px 0}
+.welcome{margin:14px;padding:16px;background:#d9f2e8;border-radius:20px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+button{font-family:inherit;cursor:pointer}
+.account{background:#075541;color:white;border:0;border-radius:30px;padding:12px 16px}
+.grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin:14px}
+.card{grid-column:span 2;border-radius:22px;padding:18px 10px;text-align:center;color:white;min-height:170px;box-shadow:0 4px 12px #0002;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px}
+.card.big{grid-column:span 3;min-height:220px}
+.card h2{font-size:20px;margin:0}
+.card p{margin:0;font-size:14px}
+.card button{background:#063b32;color:white;border:1px solid #f6d77b;border-radius:24px;padding:9px 16px}
+.gold{background:linear-gradient(135deg,#51300b,#b57812,#593707)}
+.teal{background:linear-gradient(135deg,#034d58,#087e8b,#032d39)}
+.green{background:linear-gradient(135deg,#03462f,#08784c)}
+.blue{background:linear-gradient(135deg,#063454,#0877a2)}
+.purple{background:linear-gradient(135deg,#56103e,#a32069)}
+.more{margin:14px;padding:20px;background:#064b3b;color:white;border-radius:22px;width:calc(100% - 28px);border:2px solid #d7b85c;font-size:20px}
+#moreMenu{display:none;margin:14px;padding:14px;background:white;border-radius:18px}
+#moreMenu button{padding:12px;margin:4px;border:1px solid #d7b85c;border-radius:12px;background:#f6fbf8;color:#064b3b}
+.networks{text-align:center;margin:14px;padding:15px;background:white;border-radius:18px}
+.networks span{display:inline-block;margin:5px;font-weight:bold}
+footer{position:sticky;bottom:0;background:#043c30;color:white;display:flex;justify-content:space-around;padding:13px 2px;border-radius:25px 25px 0 0}
+footer button{background:none;border:0;color:white;font-size:12px}
+.page{display:none;padding:18px}
+.page input,.page select{width:100%;padding:13px;margin:8px 0;border:1px solid #bbb;border-radius:12px;font-size:16px}
+.primary{background:#075541;color:white;border:0;border-radius:12px;padding:14px;width:100%;margin-top:12px;font-size:17px}
+.back{border:0;background:#e0eee7;padding:10px 16px;border-radius:12px}
+.success{text-align:center;background:white;border-radius:22px;padding:24px;margin-top:25px}
+.check{margin:auto;background:#18c875;color:white;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;font-size:95px}
+.success h2{color:#13a966}
+.note{font-size:12px;color:#777;text-align:center;padding:12px}
+@media(max-width:390px){.card{grid-column:span 3}.card.big{min-height:190px}.card h2{font-size:17px}header h1{font-size:23px}}
 </style>
 </head>
 <body>
 <header>
-  <div class="brand">📱 بن سويدان أونلاين</div>
-  <p>رصيدك وباقاتك في مكان واحد</p>
-  <div class="balance">
-    <small>خدمات الرصيد والباقات</small>
-    <div style="font-size:19px;font-weight:bold;margin-top:8px">أهلاً بك 👋</div>
-  </div>
+<h1>👑 بن سويدان أونلاين</h1>
+<p>خدمات الرصيد والإنترنت</p>
+<strong>سرعة • أمان • ثقة</strong>
 </header>
 
-<main>
-  <h3>اختر الشبكة</h3>
-  <div class="grid" id="networks">
-    <button class="network active" data-net="يمن موبايل">🟢<span>يمن موبايل</span></button>
-    <button class="network" data-net="يو">🔵<span>يو</span></button>
-    <button class="network" data-net="سبأفون">🔴<span>سبأفون</span></button>
-    <button class="network" data-net="واي">🟣<span>واي</span></button>
-    <button class="network" data-net="يمن 4G">📶<span>يمن 4G</span></button>
-    <button class="network" data-net="أخرى">➕<span>أخرى</span></button>
-  </div>
+<main id="home">
+<div class="welcome">
+<div><strong>مرحباً بك في بن سويدان أونلاين</strong><br><small>جميع خدماتك في مكان واحد</small></div>
+<button class="account" onclick="openPage('account')">👤 حسابك</button>
+</div>
 
-  <div class="tabs">
-    <button class="tab active" data-type="رصيد">💳 شحن الرصيد</button>
-    <button class="tab" data-type="إنترنت">🌐 إنترنت</button>
-    <button class="tab" data-type="اتصال">☎️ اتصال</button>
-  </div>
+<div class="grid">
+<div class="card big teal">
+<div style="font-size:48px">📶</div><h2>كبينة الواي فاي</h2>
+<p>خدمات الإنترنت</p>
+<button onclick="openPage('wifi')">الدخول الآن ←</button>
+</div>
+<div class="card big gold">
+<div style="font-size:48px">💳</div><h2>كبينة الرصيد</h2>
+<p>الرصيد - الإنترنت - الاتصال</p>
+<button onclick="openPage('recharge')">الدخول الآن ←</button>
+</div>
+<div class="card green"><div style="font-size:38px">⇄</div><h2>تحويل إلى حساب عميل</h2><button onclick="openPage('transfer')">الدخول الآن</button></div>
+<div class="card blue"><div style="font-size:38px">👥</div><h2>إدارة العملاء</h2><button onclick="openPage('customers')">الدخول الآن</button></div>
+<div class="card purple"><div style="font-size:38px">📋</div><h2>العمليات</h2><button onclick="openPage('operations')">الدخول الآن</button></div>
+</div>
 
-  <section class="panel">
-    <h3 id="formTitle" style="margin-top:0">شحن الرصيد</h3>
-    <label for="phone">رقم الهاتف</label>
-    <input id="phone" type="tel" inputmode="numeric" placeholder="أدخل رقم الهاتف">
-
-    <div id="amountBox">
-      <label for="amount">مبلغ الرصيد (ريال)</label>
-      <input id="amount" type="number" min="1" placeholder="أدخل المبلغ">
-    </div>
-
-    <div id="packageBox" hidden>
-      <label>اختر الباقة</label>
-      <div class="packages" id="packages"></div>
-    </div>
-
-    <button class="submit" id="submit">متابعة الطلب</button>
-    <p class="note">هذه واجهة تجريبية. تنفيذ الشحن وتفعيل الباقات يحتاج إلى ربط بمزوّد خدمة معتمد، ولن يتم خصم أي مبلغ من خلال هذه الصفحة.</p>
-  </section>
-
-  <section class="panel" style="margin-top:16px">
-    <h3 style="margin-top:0">📋 طلبك الحالي</h3>
-    <div id="summary">اختر الشبكة ونوع الخدمة لإظهار التفاصيل.</div>
-  </section>
+<button class="more" onclick="toggleMore()">▦　المزيد　›</button>
+<div id="moreMenu">
+<button onclick="openPage('reports')">📊 التقارير</button>
+<button onclick="openPage('cards')">🌐 بطائق النت</button>
+<button onclick="openPage('device')">🛡️ تأكيد الجهاز</button>
+<button onclick="openPage('about')">ℹ️ حول التطبيق</button>
+<button onclick="openPage('ledger')">📒 الدفتر المحاسبي</button>
+<button onclick="openPage('games')">🎮 معرض الألعاب</button>
+</div>
+<div class="networks">الشبكات المدعومة<br>
+<span>📶 يمن موبايل</span><span>4G</span><span>سبأفون</span><span>MTN</span>
+</div>
+<div class="note">هذه نسخة تجريبية للواجهة. لا تنفذ شحنًا حقيقيًا حتى ربط مزود الخدمة.</div>
 </main>
 
-<footer>بن سويدان أونلاين © 2026</footer>
+<section id="recharge" class="page">
+<button class="back" onclick="goHome()">→ رجوع</button>
+<h2>💳 تسديد الرصيد</h2>
+<label>الشبكة</label>
+<select id="network"><option>يمن موبايل</option><option>يو</option><option>سبأفون</option><option>واي</option></select>
+<label>رقم الهاتف</label><input id="phone" inputmode="tel" placeholder="أدخل رقم الهاتف">
+<label>نوع العملية</label>
+<select id="kind"><option>رصيد</option><option>باقات إنترنت</option></select>
+<label>المبلغ</label><input id="amount" type="number" min="1" placeholder="أدخل المبلغ">
+<button class="primary" onclick="demoPay()">متابعة التسديد</button>
+<p class="note">تجربة شكل الشاشة فقط، لا يتم خصم أو شحن أي رصيد.</p>
+</section>
+
+<section id="success" class="page">
+<div class="success">
+<div class="check">✓</div>
+<h2>جاهز</h2>
+<h3>تم تنفيذ العملية بنجاح</h3>
+<p>هذه شاشة معاينة فقط. لم يتم تنفيذ عملية شحن حقيقية.</p>
+<p id="details"></p>
+<button class="primary" onclick="goHome()">العودة للرئيسية</button>
+</div>
+</section>
+
+<section id="wifi" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>كبينة الواي فاي</h2><p>ستضاف خدمات الإنترنت بعد ربط مزود الخدمة.</p></section>
+<section id="account" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>حسابك</h2><p>إعدادات الحساب ستضاف لاحقًا.</p></section>
+<section id="transfer" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>تحويل إلى حساب عميل</h2><p>تحتاج هذه الخدمة إلى نظام حسابات آمن.</p></section>
+<section id="customers" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>إدارة العملاء</h2></section>
+<section id="operations" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>العمليات</h2><p>ستظهر العمليات المسجلة بعد إعداد قاعدة البيانات.</p></section>
+<section id="reports" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>التقارير</h2></section>
+<section id="cards" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>بطائق النت</h2></section>
+<section id="device" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>تأكيد الجهاز</h2></section>
+<section id="about" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>حول بن سويدان أونلاين</h2><p>تطبيق خدمات الرصيد والإنترنت.</p></section>
+<section id="ledger" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>الدفتر المحاسبي</h2></section>
+<section id="games" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>معرض الألعاب</h2></section>
+
+<footer>
+<button onclick="goHome()">🏠<br>الرئيسية</button>
+<button onclick="openPage('operations')">📋<br>العمليات</button>
+<button onclick="openPage('customers')">👥<br>العملاء</button>
+<button onclick="openPage('operations')">🔔<br>الإشعارات</button>
+<button onclick="openPage('account')">⚙️<br>الإعدادات</button>
+<button onclick="toggleMore()">▦<br>المزيد</button>
+</footer>
 
 <script>
-let network="يمن موبايل";
-let type="رصيد";
-let selectedPackage="";
-
-const packageData={
-  "إنترنت":[
-    ["باقة يومية","يومية"],
-    ["باقة أسبوعية","أسبوعية"],
-    ["باقة شهرية","شهرية"],
-    ["باقة بيانات","حسب العرض"]
-  ],
-  "اتصال":[
-    ["دقائق يومية","يومية"],
-    ["دقائق أسبوعية","أسبوعية"],
-    ["دقائق شهرية","شهرية"],
-    ["مكالمات","حسب العرض"]
-  ]
-};
-
-const networkButtons=document.querySelectorAll(".network");
-networkButtons.forEach(button=>{
-  button.addEventListener("click",()=>{
-    network=button.dataset.net;
-    networkButtons.forEach(b=>b.classList.toggle("active",b===button));
-    updateSummary();
-  });
-});
-
-document.querySelectorAll(".tab").forEach(button=>{
-  button.addEventListener("click",()=>{
-    type=button.dataset.type;
-    document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b===button));
-    document.getElementById("formTitle").textContent=
-      type==="رصيد"?"شحن الرصيد":type==="إنترنت"?"باقات الإنترنت":"باقات الاتصال";
-    document.getElementById("amountBox").hidden=type!=="رصيد";
-    document.getElementById("packageBox").hidden=type==="رصيد";
-    selectedPackage="";
-    renderPackages();
-    updateSummary();
-  });
-});
-
-function renderPackages(){
-  const container=document.getElementById("packages");
-  container.replaceChildren();
-  (packageData[type]||[]).forEach(item=>{
-    const button=document.createElement("button");
-    button.className="package";
-    button.innerHTML="<b></b><small></small>";
-    button.querySelector("b").textContent=item[0];
-    button.querySelector("small").textContent=item[1];
-    button.addEventListener("click",()=>{
-      selectedPackage=item[0];
-      container.querySelectorAll(".package").forEach(p=>p.classList.toggle("active",p===button));
-      updateSummary();
-    });
-    container.appendChild(button);
-  });
+function openPage(id){
+document.getElementById('home').style.display='none';
+document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+document.getElementById(id).style.display='block';
+window.scrollTo(0,0);
 }
-
-function updateSummary(){
-  const phone=document.getElementById("phone").value.trim();
-  const detail=type==="رصيد"
-    ? (document.getElementById("amount").value||"لم يحدد")
-      +" ريال"
-    : (selectedPackage||"لم تختر باقة");
-  document.getElementById("summary").textContent=
-    "الشبكة: "+network+" — الخدمة: "+type+
-    " — الرقم: "+(phone||"لم يدخل بعد")+
-    " — التفاصيل: "+detail;
+function goHome(){
+document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+document.getElementById('home').style.display='block';
+window.scrollTo(0,0);
 }
-
-document.getElementById("phone").addEventListener("input",updateSummary);
-document.getElementById("amount").addEventListener("input",updateSummary);
-
-document.getElementById("submit").addEventListener("click",()=>{
-  const phone=document.getElementById("phone").value.trim();
-  if(!phone){
-    alert("أدخل رقم الهاتف أولاً");
-    return;
-  }
-  if(type==="رصيد"&&Number(document.getElementById("amount").value)<=0){
-    alert("أدخل مبلغ رصيد صحيح");
-    return;
-  }
-  if(type!=="رصيد"&&!selectedPackage){
-    alert("اختر الباقة أولاً");
-    return;
-  }
-  alert("تم تجهيز تفاصيل طلبك للمعاينة فقط. الشحن الفعلي غير مفعّل حتى ربط مزوّد الخدمة.");
-});
-renderPackages();
-updateSummary();
+function toggleMore(){
+const m=document.getElementById('moreMenu');
+m.style.display=m.style.display==='block'?'none':'block';
+}
+function demoPay(){
+const phone=document.getElementById('phone').value.trim();
+const amount=document.getElementById('amount').value;
+if(!phone||!amount||Number(amount)<=0){alert('أدخل رقم الهاتف والمبلغ أولاً');return;}
+document.getElementById('details').textContent=
+'الرقم: '+phone+' • الشبكة: '+document.getElementById('network').value+
+' • النوع: '+document.getElementById('kind').value+' • المبلغ: '+amount;
+openPage('success');
+}
 </script>
 </body>
 </html>
