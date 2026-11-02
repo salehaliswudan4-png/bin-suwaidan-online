@@ -3,160 +3,204 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#063b32">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#075b3b">
 <title>بن سويدان أونلاين</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#f2f7f4;color:#123b30;font-family:Arial,sans-serif}
-header{background:linear-gradient(135deg,#032d25,#08664e,#032d25);color:#f6d77b;padding:25px 16px;text-align:center;border-bottom:5px solid #d9b65b}
-header h1{margin:0;font-size:27px}
-header p{color:white;margin:9px 0}
-.welcome{margin:14px;padding:16px;background:#d9f2e8;border-radius:20px;display:flex;justify-content:space-between;align-items:center;gap:8px}
-button{font-family:inherit;cursor:pointer}
-.account{background:#075541;color:white;border:0;border-radius:30px;padding:12px 16px}
-.grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin:14px}
-.card{grid-column:span 2;border-radius:22px;padding:18px 10px;text-align:center;color:white;min-height:170px;box-shadow:0 4px 12px #0002;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px}
-.card.big{grid-column:span 3;min-height:220px}
-.card h2{font-size:20px;margin:0}
-.card p{margin:0;font-size:14px}
-.card button{background:#063b32;color:white;border:1px solid #f6d77b;border-radius:24px;padding:9px 16px}
-.gold{background:linear-gradient(135deg,#51300b,#b57812,#593707)}
-.teal{background:linear-gradient(135deg,#034d58,#087e8b,#032d39)}
-.green{background:linear-gradient(135deg,#03462f,#08784c)}
-.blue{background:linear-gradient(135deg,#063454,#0877a2)}
-.purple{background:linear-gradient(135deg,#56103e,#a32069)}
-.more{margin:14px;padding:20px;background:#064b3b;color:white;border-radius:22px;width:calc(100% - 28px);border:2px solid #d7b85c;font-size:20px}
-#moreMenu{display:none;margin:14px;padding:14px;background:white;border-radius:18px}
-#moreMenu button{padding:12px;margin:4px;border:1px solid #d7b85c;border-radius:12px;background:#f6fbf8;color:#064b3b}
-.networks{text-align:center;margin:14px;padding:15px;background:white;border-radius:18px}
-.networks span{display:inline-block;margin:5px;font-weight:bold}
-footer{position:sticky;bottom:0;background:#043c30;color:white;display:flex;justify-content:space-around;padding:13px 2px;border-radius:25px 25px 0 0}
-footer button{background:none;border:0;color:white;font-size:12px}
-.page{display:none;padding:18px}
-.page input,.page select{width:100%;padding:13px;margin:8px 0;border:1px solid #bbb;border-radius:12px;font-size:16px}
-.primary{background:#075541;color:white;border:0;border-radius:12px;padding:14px;width:100%;margin-top:12px;font-size:17px}
-.back{border:0;background:#e0eee7;padding:10px 16px;border-radius:12px}
-.success{text-align:center;background:white;border-radius:22px;padding:24px;margin-top:25px}
-.check{margin:auto;background:#18c875;color:white;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;font-size:95px}
-.success h2{color:#13a966}
-.note{font-size:12px;color:#777;text-align:center;padding:12px}
-@media(max-width:390px){.card{grid-column:span 3}.card.big{min-height:190px}.card h2{font-size:17px}header h1{font-size:23px}}
+body{margin:0;font-family:Tahoma,Arial;background:#f2f5f2;color:#183b2a}
+header{background:linear-gradient(135deg,#06452e,#08794c);color:white;padding:24px 18px;border-radius:0 0 25px 25px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:55px;height:55px;border:2px solid #e3c16e;border-radius:16px;display:grid;place-items:center;color:#e3c16e;font-size:29px;font-weight:bold}
+header h2{margin:0 0 7px}
+header small{color:#e9dcb4}
+.balance{background:#ffffff18;border:1px solid #ffffff40;padding:16px;border-radius:15px;margin-top:20px}
+.balance strong{display:block;color:#f1d17b;font-size:26px;margin-top:8px}
+main{max-width:650px;margin:auto;padding:17px}
+h3{font-size:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.tile{background:white;border:1px solid #e4e9e3;border-radius:17px;padding:18px 9px;text-align:center;box-shadow:0 3px 12px #0001;cursor:pointer}
+.ico{width:50px;height:50px;border-radius:15px;background:#e5f3e9;color:#08794c;display:grid;place-items:center;font-size:26px;margin:0 auto 10px}
+.tile b{font-size:14px}
+.tile small{display:block;color:#87958b;margin-top:7px}
+.page{display:none;background:white;padding:19px;border-radius:17px;margin-top:15px;border:1px solid #e4e9e3}
+.page.active{display:block}
+.page h3{color:#08613d;margin-top:0}
+button{border:0;border-radius:11px;padding:13px;font-size:15px;font-weight:bold;cursor:pointer}
+.back{background:#eee;color:#333;margin-bottom:15px}
+.primary{background:#087449;color:white;width:100%;margin-top:12px}
+input,select{display:block;width:100%;padding:13px;margin:10px 0;border:1px solid #dce5dd;border-radius:10px;font-size:15px;background:white}
+.option{padding:14px;border:1px solid #e4e9e3;border-radius:12px;margin:9px 0;cursor:pointer;background:#fafcfa}
+.menu-item{padding:15px;border-bottom:1px solid #edf0ed;cursor:pointer}
+.success{text-align:center;padding:20px 5px}
+footer{text-align:center;padding:25px;color:#87928a;font-size:12px}
 </style>
 </head>
 <body>
+
 <header>
-<h1>👑 بن سويدان أونلاين</h1>
-<p>خدمات الرصيد والإنترنت</p>
-<strong>سرعة • أمان • ثقة</strong>
+<div class="brand">
+<div class="logo">ب</div>
+<div>
+<h2>بن سويدان أونلاين</h2>
+<small>للخدمات الإلكترونية وشحن الرصيد</small>
+</div>
+</div>
+<div class="balance">
+<span>رصيد المحفظة</span>
+<strong>0.00 ريال</strong>
+</div>
 </header>
 
-<main id="home">
-<div class="welcome">
-<div><strong>مرحباً بك في بن سويدان أونلاين</strong><br><small>جميع خدماتك في مكان واحد</small></div>
-<button class="account" onclick="openPage('account')">👤 حسابك</button>
-</div>
-
+<main>
+<div id="home">
+<h3>الخدمات الرئيسية</h3>
 <div class="grid">
-<div class="card big teal">
-<div style="font-size:48px">📶</div><h2>كبينة الواي فاي</h2>
-<p>خدمات الإنترنت</p>
-<button onclick="openPage('wifi')">الدخول الآن ←</button>
+<div class="tile" onclick="show('payment')"><div class="ico">💳</div><b>كبينة السداد</b><small>شحن الرصيد والباقات</small></div>
+<div class="tile" onclick="show('wifi')"><div class="ico">📶</div><b>WI-FI</b><small>خدمات الإنترنت</small></div>
+<div class="tile" onclick="show('transfer')"><div class="ico">🔄</div><b>تحويل إلى حساب عميل</b></div>
+<div class="tile" onclick="show('customers')"><div class="ico">👥</div><b>إدارة العملاء</b></div>
+<div class="tile" onclick="show('operations')"><div class="ico">📋</div><b>العمليات</b></div>
+<div class="tile" onclick="show('more')"><div class="ico">☰</div><b>المزيد</b></div>
 </div>
-<div class="card big gold">
-<div style="font-size:48px">💳</div><h2>كبينة الرصيد</h2>
-<p>الرصيد - الإنترنت - الاتصال</p>
-<button onclick="openPage('recharge')">الدخول الآن ←</button>
-</div>
-<div class="card green"><div style="font-size:38px">⇄</div><h2>تحويل إلى حساب عميل</h2><button onclick="openPage('transfer')">الدخول الآن</button></div>
-<div class="card blue"><div style="font-size:38px">👥</div><h2>إدارة العملاء</h2><button onclick="openPage('customers')">الدخول الآن</button></div>
-<div class="card purple"><div style="font-size:38px">📋</div><h2>العمليات</h2><button onclick="openPage('operations')">الدخول الآن</button></div>
 </div>
 
-<button class="more" onclick="toggleMore()">▦　المزيد　›</button>
-<div id="moreMenu">
-<button onclick="openPage('reports')">📊 التقارير</button>
-<button onclick="openPage('cards')">🌐 بطائق النت</button>
-<button onclick="openPage('device')">🛡️ تأكيد الجهاز</button>
-<button onclick="openPage('about')">ℹ️ حول التطبيق</button>
-<button onclick="openPage('ledger')">📒 الدفتر المحاسبي</button>
-<button onclick="openPage('games')">🎮 معرض الألعاب</button>
+<div id="payment" class="page">
+<button class="back" onclick="home()">رجوع</button>
+<h3>كبينة السداد</h3>
+<div class="option" onclick="show('recharge')">📱 شحن الرصيد</div>
+<div class="option" onclick="show('calls')">📞 باقات الاتصال</div>
+<div class="option" onclick="show('internet')">🌐 باقات الإنترنت</div>
 </div>
-<div class="networks">الشبكات المدعومة<br>
-<span>📶 يمن موبايل</span><span>4G</span><span>سبأفون</span><span>MTN</span>
+
+<div id="wifi" class="page">
+<button class="back" onclick="home()">رجوع</button>
+<h3>WI-FI</h3>
+<input placeholder="رقم الاشتراك">
+<input type="number" placeholder="المبلغ">
+<button class="primary" onclick="success('طلب WI-FI تجريبي')">تأكيد الطلب</button>
 </div>
-<div class="note">هذه نسخة تجريبية للواجهة. لا تنفذ شحنًا حقيقيًا حتى ربط مزود الخدمة.</div>
+
+<div id="recharge" class="page">
+<button class="back" onclick="show('payment')">رجوع</button>
+<h3>شحن الرصيد</h3>
+<input id="phone" placeholder="رقم الهاتف" oninput="detect()">
+<p id="network">الشبكة: لم يتم تحديدها</p>
+<input type="number" id="amount" placeholder="مبلغ الشحن">
+<button class="primary" onclick="pay()">تسديد</button>
+</div>
+
+<div id="calls" class="page">
+<button class="back" onclick="show('payment')">رجوع</button>
+<h3>باقات الاتصال</h3>
+<select><option>اختر الشبكة</option><option>Yemen Mobile</option><option>Sabafon</option><option>YOU</option></select>
+<input placeholder="رقم الهاتف">
+<select><option>اختر الباقة</option><option>باقة تجريبية 1</option><option>باقة تجريبية 2</option></select>
+<button class="primary" onclick="success('طلب باقة اتصال تجريبي')">تأكيد</button>
+</div>
+
+<div id="internet" class="page">
+<button class="back" onclick="show('payment')">رجوع</button>
+<h3>باقات الإنترنت</h3>
+<select><option>اختر الشبكة</option><option>Yemen Mobile</option><option>Sabafon</option><option>YOU</option></select>
+<input placeholder="رقم الهاتف">
+<select><option>اختر الباقة</option><option>باقة إنترنت تجريبية 1</option><option>باقة إنترنت تجريبية 2</option></select>
+<button class="primary" onclick="success('طلب باقة إنترنت تجريبي')">تأكيد</button>
+</div>
+
+<div id="transfer" class="page">
+<button class="back" onclick="home()">رجوع</button>
+<h3>تحويل إلى حساب عميل</h3>
+<input placeholder="رقم حساب العميل">
+<input type="number" placeholder="المبلغ">
+<button class="primary" onclick="success('تحويل تجريبي')">تحويل</button>
+</div>
+
+<div id="customers" class="page">
+<button class="back" onclick="home()">رجوع</button>
+<h3>إدارة العملاء</h3>
+<input id="customer" placeholder="اسم العميل">
+<input id="customerPhone" placeholder="رقم الهاتف">
+<button class="primary" onclick="addCustomer()">إضافة عميل</button>
+<div id="customerList"></div>
+</div>
+
+<div id="operations" class="page">
+<button class="back" onclick="home()">رجوع</button>
+<h3>العمليات</h3>
+<div id="history">لا توجد عمليات حتى الآن</div>
+</div>
+
+<div id="more" class="page">
+<button class="back" onclick="home()">رجوع</button>
+<h3>المزيد</h3>
+<div class="menu-item" onclick="simple('التقارير')">📊 التقارير</div>
+<div class="menu-item" onclick="simple('بطاقات نت')">🎫 بطاقات نت</div>
+<div class="menu-item" onclick="simple('تأكيد الجهاز')">📱 تأكيد الجهاز</div>
+<div class="menu-item" onclick="simple('حول التطبيق')">ℹ️ حول التطبيق</div>
+<div class="menu-item" onclick="simple('الدفتر المحاسبي')">📒 الدفتر المحاسبي</div>
+<div class="menu-item" onclick="simple('معرض ألعاب')">🎮 معرض ألعاب</div>
+<div id="extra"></div>
+</div>
+
+<div id="result" class="page">
+<div class="success">
+<div style="font-size:55px">✅</div>
+<h3>تم بنجاح</h3>
+<p id="resultText"></p>
+<p>هذه عملية تجريبية وليست شحنًا حقيقيًا.</p>
+<button class="primary" onclick="home()">العودة للرئيسية</button>
+</div>
+</div>
+
+<footer>بن سويدان أونلاين © 2026</footer>
 </main>
 
-<section id="recharge" class="page">
-<button class="back" onclick="goHome()">→ رجوع</button>
-<h2>💳 تسديد الرصيد</h2>
-<label>الشبكة</label>
-<select id="network"><option>يمن موبايل</option><option>يو</option><option>سبأفون</option><option>واي</option></select>
-<label>رقم الهاتف</label><input id="phone" inputmode="tel" placeholder="أدخل رقم الهاتف">
-<label>نوع العملية</label>
-<select id="kind"><option>رصيد</option><option>باقات إنترنت</option></select>
-<label>المبلغ</label><input id="amount" type="number" min="1" placeholder="أدخل المبلغ">
-<button class="primary" onclick="demoPay()">متابعة التسديد</button>
-<p class="note">تجربة شكل الشاشة فقط، لا يتم خصم أو شحن أي رصيد.</p>
-</section>
-
-<section id="success" class="page">
-<div class="success">
-<div class="check">✓</div>
-<h2>جاهز</h2>
-<h3>تم تنفيذ العملية بنجاح</h3>
-<p>هذه شاشة معاينة فقط. لم يتم تنفيذ عملية شحن حقيقية.</p>
-<p id="details"></p>
-<button class="primary" onclick="goHome()">العودة للرئيسية</button>
-</div>
-</section>
-
-<section id="wifi" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>كبينة الواي فاي</h2><p>ستضاف خدمات الإنترنت بعد ربط مزود الخدمة.</p></section>
-<section id="account" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>حسابك</h2><p>إعدادات الحساب ستضاف لاحقًا.</p></section>
-<section id="transfer" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>تحويل إلى حساب عميل</h2><p>تحتاج هذه الخدمة إلى نظام حسابات آمن.</p></section>
-<section id="customers" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>إدارة العملاء</h2></section>
-<section id="operations" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>العمليات</h2><p>ستظهر العمليات المسجلة بعد إعداد قاعدة البيانات.</p></section>
-<section id="reports" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>التقارير</h2></section>
-<section id="cards" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>بطائق النت</h2></section>
-<section id="device" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>تأكيد الجهاز</h2></section>
-<section id="about" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>حول بن سويدان أونلاين</h2><p>تطبيق خدمات الرصيد والإنترنت.</p></section>
-<section id="ledger" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>الدفتر المحاسبي</h2></section>
-<section id="games" class="page"><button class="back" onclick="goHome()">→ رجوع</button><h2>معرض الألعاب</h2></section>
-
-<footer>
-<button onclick="goHome()">🏠<br>الرئيسية</button>
-<button onclick="openPage('operations')">📋<br>العمليات</button>
-<button onclick="openPage('customers')">👥<br>العملاء</button>
-<button onclick="openPage('operations')">🔔<br>الإشعارات</button>
-<button onclick="openPage('account')">⚙️<br>الإعدادات</button>
-<button onclick="toggleMore()">▦<br>المزيد</button>
-</footer>
-
 <script>
-function openPage(id){
+function show(id){
 document.getElementById('home').style.display='none';
-document.querySelectorAll('.page').forEach(p=>p.style.display='none');
-document.getElementById(id).style.display='block';
-window.scrollTo(0,0);
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
 }
-function goHome(){
-document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+function home(){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
 document.getElementById('home').style.display='block';
-window.scrollTo(0,0);
 }
-function toggleMore(){
-const m=document.getElementById('moreMenu');
-m.style.display=m.style.display==='block'?'none':'block';
+function success(msg){
+document.getElementById('resultText').textContent=msg;
+document.getElementById('history').textContent=msg;
+show('result');
 }
-function demoPay(){
-const phone=document.getElementById('phone').value.trim();
-const amount=document.getElementById('amount').value;
-if(!phone||!amount||Number(amount)<=0){alert('أدخل رقم الهاتف والمبلغ أولاً');return;}
-document.getElementById('details').textContent=
-'الرقم: '+phone+' • الشبكة: '+document.getElementById('network').value+
-' • النوع: '+document.getElementById('kind').value+' • المبلغ: '+amount;
-openPage('success');
+function detect(){
+let n=document.getElementById('phone').value;
+let network='لم يتم تحديدها';
+if(/^77/.test(n))network='Yemen Mobile';
+else if(/^71/.test(n))network='Sabafon';
+else if(/^73/.test(n))network='YOU';
+document.getElementById('network').textContent='الشبكة: '+network;
+}
+function pay(){
+let phone=document.getElementById('phone').value;
+let amount=document.getElementById('amount').value;
+if(phone.length<7||!amount||Number(amount)<=0){
+alert('أدخل رقم الهاتف والمبلغ بشكل صحيح');
+return;
+}
+success('طلب شحن تجريبي للرقم '+phone+' بمبلغ '+amount+' ريال');
+}
+function addCustomer(){
+let name=document.getElementById('customer').value;
+let phone=document.getElementById('customerPhone').value;
+if(!name||!phone){alert('أدخل اسم العميل ورقم الهاتف');return;}
+let item=document.createElement('div');
+item.className='option';
+item.textContent=name+' - '+phone;
+document.getElementById('customerList').appendChild(item);
+document.getElementById('customer').value='';
+document.getElementById('customerPhone').value='';
+}
+function simple(name){
+document.getElementById('extra').textContent=name+' - هذه صفحة تجريبية';
 }
 </script>
 </body>
